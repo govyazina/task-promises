@@ -6,7 +6,7 @@
     const loadA = () => load('a');
     const loadB = () => load('b');
     const loadC = () => load('c');
-    const loadD = () => load('фd');
+    const loadD = () => load('d');
 
     const setTitle = (title) => document.title = title;
 
@@ -29,5 +29,10 @@
     // на странице функциями drawA-drawD. На время загрузки должен отображаться текст "Loading..."
     // в соответствующем контейнере. После загрузки данных во все контейнеры надо заменить заголовок Loading на "Done"
     function runTask() {
+        loadA();
+        loadB();
+        loadC();
+        loadD();
+        loadA();
     }
 })();
