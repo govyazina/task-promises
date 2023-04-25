@@ -29,6 +29,11 @@
     // на странице функциями drawA-drawD. На время загрузки должен отображаться текст "Loading..."
     // в соответствующем контейнере. После загрузки данных во все контейнеры надо заменить заголовок Loading на "Done"
     async function runTask() {
+        const loading = 'Loading...';
+        drawA(loading)
+        drawB(loading)
+        drawC(loading)
+        drawD(loading)
         drawA(await loadA())
         drawB(await loadB())
         drawC(await loadC())
