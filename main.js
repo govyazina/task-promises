@@ -28,11 +28,11 @@
     // Задача: написать код runTask, который будет загружать данные с сервера функциями loadA-loadD) и отрисовывать их
     // на странице функциями drawA-drawD. На время загрузки должен отображаться текст "Loading..."
     // в соответствующем контейнере. После загрузки данных во все контейнеры надо заменить заголовок Loading на "Done"
-    function runTask() {
-        loadA();
-        loadB();
-        loadC();
-        loadD();
-        loadA();
+    async function runTask() {
+        drawA(await loadA())
+        drawB(await loadB())
+        drawC(await loadC())
+        drawD(await loadD())
+        setTitle('Done')
     }
 })();
