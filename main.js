@@ -34,10 +34,13 @@
         drawB(loading)
         drawC(loading)
         drawD(loading)
-        drawA(await loadA())
-        drawB(await loadB())
-        drawC(await loadC())
-        drawD(await loadD())
-        setTitle('Done')
+        const check = await Promise.all([loadA().then(result => drawA(result)),
+            loadB().then(result => drawB(result)),
+            loadC().then(result => drawC(result)),
+            loadD().then(result => drawD(result))])
+
+        if (check) {
+            setTitle('Done')
+        }
     }
 })();
